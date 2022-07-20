@@ -19,6 +19,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="estado.js" type="module"></script>
 </head>
 
 <body>
@@ -291,11 +292,11 @@
         <div class="container-fluid">
             <div class="container-flat-form">
                 <div class="title-flat-form title-flat-blue">Agregar un nuevo estado</div>
-                <form autocomplete="off">
+                <form autocomplete="off" id="formulario-estado">
                     <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                             <div class="group-material">
-                                <input type="number" class="material-control tooltips-general"
+                                <input type="number" class="material-control tooltips-general" name="codigo"
                                     placeholder="Escribe aquí el código del estado" required data-toggle="tooltip"
                                     data-placement="top" title="Solo números, máximo 10 dígitos" max="4294967295"
                                     min="0">
@@ -304,7 +305,7 @@
                                 <label>Código del estado</label>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general"
+                                <input type="text" class="material-control tooltips-general" name="nombre"
                                     placeholder="Escribe aquí el nombre del estado" required
                                     pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ ]{1,20}" maxlength="20" data-toggle="tooltip"
                                     data-placement="top" title="Escribe el nombre del estado">
@@ -317,7 +318,7 @@
                                     <i class="zmdi zmdi-roller"></i>
                                     &nbsp;&nbsp; Limpiar
                                 </button>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="subir">
                                     <i class="zmdi zmdi-floppy"></i>
                                     &nbsp;&nbsp; Guardar
                                 </button>
