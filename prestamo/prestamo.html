@@ -49,132 +49,6 @@
                     </li>
                     <li>
                         <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-face zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Autores
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../autor/autor.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir autores
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../autor/lista_autor.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado autores
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-bookmark zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Categorías
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../categoria/categoria.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir categorías
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../categoria/lista_categoria.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado categorías
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-copy zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Copias
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../copia/copia.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir copias
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../copia/lista_copia.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado copias
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-tag zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Editoriales
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../editorial/editorial.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir editoriales
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../editorial/lista_editorial.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado editoriales
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-assignment-check zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Estados
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../estado/estado.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir estados
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../estado/lista_estado.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado estados
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
-                            <i class="zmdi zmdi-font zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Idiomas
-                            <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="../idioma/idioma.html">
-                                    <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir idiomas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../idioma/lista_idioma.html">
-                                    <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado idiomas
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-menu-button">
                             <i class="zmdi zmdi-book zmdi-hc-fw"></i>
                             &nbsp;&nbsp; Libros
                             <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
@@ -236,12 +110,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="../reporte.html">
-                            <i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Reportes
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -291,49 +159,61 @@
         <div class="container-fluid">
             <div class="container-flat-form">
                 <div class="title-flat-form title-flat-blue">Agregar un nuevo préstamo</div>
-                <form autocomplete="off">
+                <form autocomplete="off" id="formulario-prestamo">
                     <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
                             <div class="group-material">
-                                <input type="number" class="material-control tooltips-general"
-                                    placeholder="Escribe aquí el código del préstamo" required data-toggle="tooltip"
-                                    data-placement="top" title="Solo números, máximo 10 dígitos" max="4294967295"
-                                    min="0">
+                                <input name="id" type="number" class="material-control tooltips-general"
+                                    placeholder="Escribe aquí el identificador del préstamo" required
+                                    data-toggle="tooltip" data-placement="top" title="Solo números, máximo 10 dígitos"
+                                    max="4294967295" min="0">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
-                                <label>Código del préstamo</label>
+                                <label>Identificador del préstamo</label>
                             </div>
+
                             <div class="group-material">
-                                <input type="number" class="material-control tooltips-general"
-                                    placeholder="Escribe aquí el código de la copia" required data-toggle="tooltip"
-                                    data-placement="top" title="Solo números, máximo 10 dígitos" max="4294967295"
-                                    min="0">
+                                <input name="libro" type="text" class="material-control tooltips-general"
+                                    placeholder="Escribe aquí el nombre del libro" required data-toggle="tooltip"
+                                    data-placement="top" title="Nombre del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
-                                <label>Código de la copia</label>
+                                <label>Libro</label>
                             </div>
+
                             <div class="group-material">
-                                <input type="number" class="material-control tooltips-general"
-                                    placeholder="Escribe aquí el código del usuario" required data-toggle="tooltip"
-                                    data-placement="top" title="Solo números, máximo 10 dígitos" max="4294967295"
-                                    min="0">
+                                <input name="usuario" type="text" class="material-control tooltips-general"
+                                    placeholder="Escribe aquí el nombre del usuario" required data-toggle="tooltip"
+                                    data-placement="top" title="Nombre del usuario">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
-                                <label>Código del usuario</label>
+                                <label>Usuario</label>
                             </div>
+
                             <div class="group-material">
-                                <input type="date" class="material-control tooltips-general" required
-                                    data-toggle="tooltip" data-placement="top" title="Fecha de préstamo">
+                                <input name="estado" type="text" class="material-control tooltips-general"
+                                    placeholder="Escribe aquí el estado del prestamo" required data-toggle="tooltip"
+                                    data-placement="top" title="Estado">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Estado</label>
+                            </div>
+
+                            <div class="group-material">
+                                <input name="fecha-prestamo" type="date" class="material-control tooltips-general"
+                                    required data-toggle="tooltip" data-placement="top" title="Fecha de préstamo">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Fecha de préstamo</label>
                             </div>
+
                             <p class="text-center">
                                 <button type="reset" class="btn btn-info" style="margin-right: 20px;">
                                     <i class="zmdi zmdi-roller"></i>
                                     &nbsp;&nbsp; Limpiar
                                 </button>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="subir">
                                     <i class="zmdi zmdi-floppy"></i>
                                     &nbsp;&nbsp; Guardar
                                 </button>
@@ -343,12 +223,9 @@
                 </form>
             </div>
         </div>
-        <footer class="footer full-reset">
-            <div class="footer-copyright full-reset all-tittles">
-                © 2022 Charlotte Giselle Rodriguez Muñoz, Gabriel Isaac Barrientos Torres
-            </div>
-        </footer>
     </div>
+    <script src="./prestamo.js" type="module"></script>
+
 </body>
 
 </html>
