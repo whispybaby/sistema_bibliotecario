@@ -20,7 +20,7 @@ subir.addEventListener('click', (event) => {
     let fecha = formulario['fecha-prestamo']
 
     set(ref(database, `prestamos/${id.value}`), {
-        codigo: id.value,
+        id: id.value,
         libro: libro.value,
         usuario: usuario.value,
         estado: estado.value,

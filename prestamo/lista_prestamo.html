@@ -114,6 +114,51 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <dialog id="modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">
+                        Editar préstamo
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="alert alert-danger d-none" role="alert" id="modal-alert">
+                        Un mensaje de error
+                    </div> -->
+                    <form id="formulario-modal">
+                        <div class="form-group">
+                            <label>Libro</label>
+                            <input name="libro" type="text" class="form-control" placeholder="Ingrese el nuevo libro" />
+                        </div>
+                        <div class="form-group">
+                            <label>Usuario</label>
+                            <input class="form-control" name="usuario" placeholder="Ingrese el nuevo usuario" />
+                        </div>
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <input class="form-control" name="estado" placeholder="Ingrese el nuevo estado" />
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de préstamo</label>
+                            <input class="form-control" name="fecha-prestamo"
+                                placeholder="Ingrese la nueva fecha de préstamo" type="date" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modal-cancelar" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-info" id="modal-guardar">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
     <!-- Menú superior -->
     <div class="content-page-container full-reset custom-scroll-containers">
         <nav class="navbar-user-top full-reset">
