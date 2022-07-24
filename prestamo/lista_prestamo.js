@@ -15,6 +15,7 @@ onValue(ref(database, 'prestamos/'), (respuesta) => {
         lista.innerHTML = ''
         return
     }
+    // Contenido inicial de la lista
     lista.innerHTML = `
         <div class="div-table-row div-table-head">
             <div class="div-table-cell">Id préstamo</div>
@@ -26,7 +27,7 @@ onValue(ref(database, 'prestamos/'), (respuesta) => {
             <div class="div-table-cell">Eliminar</div>
         </div>
     `
-    for (let prestamo of prestamos) {
+    for (let prestamo of Object.values(prestamos)) {
         if (prestamo === undefined) {
             continue
         }
