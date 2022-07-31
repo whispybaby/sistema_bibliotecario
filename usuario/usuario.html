@@ -157,20 +157,20 @@
         <div class="container-fluid">
             <div class="container-flat-form">
                 <div class="title-flat-form title-flat-blue">Agregar un nuevo usuario</div>
-                <form autocomplete="off">
+                <form autocomplete="off" id="formulario">
                     <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                             <div class="group-material">
-                                <input type="number" class="material-control tooltips-general"
+                                <input name="id" type="number" class="material-control tooltips-general"
                                     placeholder="Escribe aquí el código del usuario" required data-toggle="tooltip"
                                     data-placement="top" title="Solo números, máximo 10 dígitos" max="4294967295"
                                     min="0">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
-                                <label>Código del usuario</label>
+                                <label>Id del usuario</label>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general"
+                                <input name="nombre" type="text" class="material-control tooltips-general"
                                     placeholder="Escribe aquí el nombre del usuario" required
                                     pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ ]{1,30}" maxlength="30" data-toggle="tooltip"
                                     data-placement="top" title="Escribe el nombre del usuario">
@@ -179,7 +179,7 @@
                                 <label>Nombre del usuario</label>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general"
+                                <input  name="apellido" type="text" class="material-control tooltips-general"
                                     placeholder="Escribe aquí el apellido del usuario"
                                     pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ ]{1,30}" maxlength="30" data-toggle="tooltip"
                                     data-placement="top" title="Escribe el apellido del usuario">
@@ -188,7 +188,7 @@
                                 <label>Apellido del usuario</label>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general"
+                                <input name="rol" type="text" class="material-control tooltips-general"
                                     placeholder="Escribe aquí el rol del usuario" required data-toggle="tooltip"
                                     data-placement="top" title="Estudiante/Docente">
                                 <span class="highlight"></span>
@@ -200,7 +200,7 @@
                                     <i class="zmdi zmdi-roller"></i>
                                     &nbsp;&nbsp; Limpiar
                                 </button>
-                                <button type="submit" class="btn btn-primary">
+                                <button id="guardar" type="submit" class="btn btn-primary">
                                     <i class="zmdi zmdi-floppy"></i>
                                     &nbsp;&nbsp; Guardar
                                 </button>
@@ -211,6 +211,8 @@
             </div>
         </div>
     </div>
+<script src="usuario.js" type="module"> 
+</script>
 </body>
 
 </html>

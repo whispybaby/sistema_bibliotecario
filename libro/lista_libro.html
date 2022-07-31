@@ -91,20 +91,20 @@
                     <li>
                         <div class="dropdown-menu-button">
                             <i class="zmdi zmdi-accounts zmdi-hc-fw"></i>
-                            &nbsp;&nbsp; Usuarios
+                            &nbsp;&nbsp; Libros
                             <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i>
                         </div>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="../usuario/usuario.html">
+                                <a href="../libro/libro.html">
                                     <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Añadir usuarios
+                                    &nbsp;&nbsp; Añadir  libros
                                 </a>
                             </li>
                             <li>
-                                <a href="../usuario/lista_usuario.html">
+                                <a href="../libro/lista_libro.html">
                                     <i class="zmdi zmdi-storage zmdi-hc-fw"></i>
-                                    &nbsp;&nbsp; Listado usuarios
+                                    &nbsp;&nbsp; Listado Libros
                                 </a>
                             </li>
                         </ul>
@@ -113,6 +113,56 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <dialog id="modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">
+                        Editar libro
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="alert alert-danger d-none" role="alert" id="modal-alert">
+                        Un mensaje de error
+                    </div> -->
+                    <form id="formulario-modal"> 
+                        <div class="form-group">
+                            <label>Editorial</label>
+                            <input class="form-control" name="editorial" placeholder="Ingrese el nuevo nombre de la editorial" />
+                        </div>
+                        <div class="form-group">
+                            <label>autor</label>
+                            <input class="form-control" name="autor" placeholder="Ingrese el nuevo autor" />
+                        </div>
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <input class="form-control" name="categoria"
+                                placeholder="Ingrese la nueva categoría" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label>nombre</label>
+                            <input class="form-control" name="nombre"
+                                placeholder="Ingrese el nuevo nombre" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha publicación</label>
+                            <input class="form-control" name="fecha"
+                                placeholder="Ingrese la nueva fecha" type="date" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modal-cancelar" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-info" id="modal-guardar">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
     <!-- Menú superior -->
     <div class="content-page-container full-reset custom-scroll-containers">
         <nav class="navbar-user-top full-reset">
@@ -157,7 +207,7 @@
 
         <div class="container-fluid">
             <h2 class="text-center all-tittles">Lista de libros</h2>
-            <div class="div-table">
+            <div class="div-table" id="lista-libros">
                 <div class="div-table-row div-table-head">
                     <div class="div-table-cell">Id libro</div>
                     <div class="div-table-cell">Id editorial</div>
@@ -167,24 +217,12 @@
                     <div class="div-table-cell">Fecha de publicación</div>
                     <div class="div-table-cell">Actualizar</div>
                     <div class="div-table-cell">Eliminar</div>
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">1</div>
-                    <div class="div-table-cell">4</div>
-                    <div class="div-table-cell">5</div>
-                    <div class="div-table-cell">2</div>
-                    <div class="div-table-cell">El ladrón del rayo</div>
-                    <div class="div-table-cell">01-07-2005</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-success"><i class="zmdi zmdi-refresh"></i></button>
-                    </div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <script src=lista_libro.js type="module"></script>
 </body>
 
 </html>

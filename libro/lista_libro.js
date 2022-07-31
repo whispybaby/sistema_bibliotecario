@@ -8,39 +8,41 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
 
-onValue(ref(database, 'prestamos/'), (respuesta) => {
-    const lista = document.getElementById('lista-prestamos')
-    const prestamos = respuesta.val()
-    if (prestamos === null || prestamos.length === 0) {
+onValue(ref(database, 'libros/'), (respuesta) => {
+    const lista = document.getElementById('lista-libros')
+    const libros = respuesta.val()
+    if (libros === null || libros.length === 0) {
         lista.innerHTML = ''
         return
     }
     // Contenido inicial de la lista
     lista.innerHTML = `
         <div class="div-table-row div-table-head">
-            <div class="div-table-cell">Id préstamo</div>
-            <div class="div-table-cell">Libro</div>
-            <div class="div-table-cell">Usuario</div>
-            <div class="div-table-cell">Fecha de préstamo</div>
-            <div class="div-table-cell">Estado</div>
+            <div class="div-table-cell">Id </div>
+            <div class="div-table-cell">Editorial</div>
+            <div class="div-table-cell">Autor</div>
+            <div class="div-table-cell">Categoria</div>
+            <div class="div-table-cell">Nombre</div>
+            <div class="div-table-cell">Fecha</div>
             <div class="div-table-cell">Actualizar</div>
             <div class="div-table-cell">Eliminar</div>
         </div>
     `
-    for (let prestamo of Object.values(prestamos)) {
-        if (prestamo === undefined) {
+    for (let libro of Object.values(libros)) {
+        if (libro === undefined) {
             continue
         }
         const div = document.createElement('div')
         div.classList.add('div-table-row')
-        div.id = prestamo.id
+        div.id = libro.id
 
         div.innerHTML = `
-            <div class="div-table-cell">${prestamo.id}</div>
-            <div class="div-table-cell">${prestamo.libro}</div>
-            <div class="div-table-cell">${prestamo.usuario}</div>
-            <div class="div-table-cell">${prestamo.fecha}</div>
-            <div class="div-table-cell">${prestamo.estado}</div>
+            <div class="div-table-cell">${libro.id}</div>
+            <div class="div-table-cell">${libro.editorial}</div>
+            <div class="div-table-cell">${libro.autor}</div>
+            <div class="div-table-cell">${libro.categoria}</div>
+            <div class="div-table-cell">${libro.nombre}</div>
+            <div class="div-table-cell">${libro.fecha}</div>
             <div class="div-table-cell"></div>
             <div class="div-table-cell"></div>
         `
@@ -56,33 +58,36 @@ onValue(ref(database, 'prestamos/'), (respuesta) => {
             guardar.addEventListener('click', () => {
                 // Modificar los datos
                 const formulario_modal = document.getElementById('formulario-modal')
-                set(ref(database, `prestamos/${prestamo.id}`), {
-                    id: prestamo.id,
-                    libro: formulario_modal['libro'].value,
-                    usuario: formulario_modal['usuario'].value,
-                    fecha: formulario_modal['fecha-prestamo'].value,
-                    estado: formulario_modal['estado'].value
+                set(ref(database, `libros/${libro.id}`), {
+                    id: libro.id,
+                    editorial: formulario_modal['editorial'].value,
+                    autor: formulario_modal['autor'].value,
+                    categoria: formulario_modal['categoria'].value,
+                    nombre: formulario_modal['nombre'].value,
+                    fecha: formulario_modal['fecha'].value,
+
                 })
                 modal.close()
             })
             const cancelar = document.getElementById('modal-cancelar')
             cancelar.addEventListener('click', () => {
                 modal.close()
-            })
+            }) 
         })
-        div.children[5].appendChild(actualizar)
+        div.children[6].appendChild(actualizar)
 
         const eliminar = document.createElement('button')
         eliminar.classList.add('btn', 'btn-danger')
         eliminar.innerHTML = '<i class="zmdi zmdi-delete"></i>'
         eliminar.addEventListener('click', () => {
             // Borrar de la página
-            document.getElementById(prestamo.id).remove()
+            document.getElementById(libro.id).remove()
             // Borrar de la base de datos
-            remove(ref(database, `prestamos/${prestamo.id}`))
+            remove(ref(database, `libros/${libro.id}`))
         })
-        div.children[6].appendChild(eliminar)
+        div.children[7].appendChild(eliminar)
 
         lista.appendChild(div)
     }
 })
+ 

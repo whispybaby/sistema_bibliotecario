@@ -8,39 +8,37 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
 
-onValue(ref(database, 'prestamos/'), (respuesta) => {
-    const lista = document.getElementById('lista-prestamos')
-    const prestamos = respuesta.val()
-    if (prestamos === null || prestamos.length === 0) {
+onValue(ref(database, 'usuarios/'), (respuesta) => {
+    const lista = document.getElementById('lista-usuarios')
+    const usuarios = respuesta.val()
+    if (usuarios === null || usuarios.length === 0) {
         lista.innerHTML = ''
         return
     }
     // Contenido inicial de la lista
     lista.innerHTML = `
         <div class="div-table-row div-table-head">
-            <div class="div-table-cell">Id préstamo</div>
-            <div class="div-table-cell">Libro</div>
-            <div class="div-table-cell">Usuario</div>
-            <div class="div-table-cell">Fecha de préstamo</div>
-            <div class="div-table-cell">Estado</div>
+            <div class="div-table-cell">Id </div>
+            <div class="div-table-cell">Nombre</div>
+            <div class="div-table-cell">Apellido</div>
+            <div class="div-table-cell">Rol</div>
             <div class="div-table-cell">Actualizar</div>
             <div class="div-table-cell">Eliminar</div>
         </div>
     `
-    for (let prestamo of Object.values(prestamos)) {
-        if (prestamo === undefined) {
+    for (let usuario of Object.values(usuarios)) {
+        if (usuario === undefined) {
             continue
         }
         const div = document.createElement('div')
         div.classList.add('div-table-row')
-        div.id = prestamo.id
+        div.id = usuario.id
 
         div.innerHTML = `
-            <div class="div-table-cell">${prestamo.id}</div>
-            <div class="div-table-cell">${prestamo.libro}</div>
-            <div class="div-table-cell">${prestamo.usuario}</div>
-            <div class="div-table-cell">${prestamo.fecha}</div>
-            <div class="div-table-cell">${prestamo.estado}</div>
+            <div class="div-table-cell">${usuario.id}</div>
+            <div class="div-table-cell">${usuario.nombre}</div>
+            <div class="div-table-cell">${usuario.apellido}</div>
+            <div class="div-table-cell">${usuario.rol}</div>
             <div class="div-table-cell"></div>
             <div class="div-table-cell"></div>
         `
@@ -56,33 +54,33 @@ onValue(ref(database, 'prestamos/'), (respuesta) => {
             guardar.addEventListener('click', () => {
                 // Modificar los datos
                 const formulario_modal = document.getElementById('formulario-modal')
-                set(ref(database, `prestamos/${prestamo.id}`), {
-                    id: prestamo.id,
-                    libro: formulario_modal['libro'].value,
-                    usuario: formulario_modal['usuario'].value,
-                    fecha: formulario_modal['fecha-prestamo'].value,
-                    estado: formulario_modal['estado'].value
+                set(ref(database, `usuarios/${usuario.id}`), {
+                    id: usuario.id,
+                    nombre: formulario_modal['nombre'].value,
+                    apellido: formulario_modal['apellido'].value,
+                    rol: formulario_modal['rol'].value,
                 })
                 modal.close()
             })
             const cancelar = document.getElementById('modal-cancelar')
             cancelar.addEventListener('click', () => {
                 modal.close()
-            })
+            }) 
         })
-        div.children[5].appendChild(actualizar)
+        div.children[4].appendChild(actualizar)
 
         const eliminar = document.createElement('button')
         eliminar.classList.add('btn', 'btn-danger')
         eliminar.innerHTML = '<i class="zmdi zmdi-delete"></i>'
         eliminar.addEventListener('click', () => {
             // Borrar de la página
-            document.getElementById(prestamo.id).remove()
+            document.getElementById(usuario.id).remove()
             // Borrar de la base de datos
-            remove(ref(database, `prestamos/${prestamo.id}`))
+            remove(ref(database, `usuarios/${usuario.id}`))
         })
-        div.children[6].appendChild(eliminar)
+        div.children[5].appendChild(eliminar)
 
         lista.appendChild(div)
     }
 })
+ 
